@@ -1,0 +1,36 @@
+apply plugin: 'com.huawei.ohos.hap'
+
+ohos {
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+    def sPassword = properties.getProperty('storePassword')
+    def kPassword = properties.getProperty('keyPassword')
+
+    signingConfigs {
+        debug {
+            storeFile file('../watchdemo.p12')
+            storePassword sPassword
+            keyAlias 'watchdemo'
+            keyPassword kPassword
+            signAlg 'SHA256withECDSA'
+            profile file('../smartdebugDebug.p7b')
+            certpath file('../watchdebug.cer')
+        }
+    }
+    compileSdkVersion 4
+    defaultConfig {
+        compatibleSdkVersion 3
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.har'])
+    testCompile 'junit:junit:4.12'
+
+    implementation files('libs/wearengine-5.0.0.308.har')
+
+    implementation "io.reactivex.rxjava2:rxjava:2.2.17"
+    implementation 'com.squareup.retrofit2:retrofit:2.6.0'
+    implementation "com.squareup.retrofit2:converter-moshi:2.6.0"
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.7.1'
+}

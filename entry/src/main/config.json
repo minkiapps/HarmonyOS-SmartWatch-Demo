@@ -1,0 +1,91 @@
+{
+  "app": {
+    "bundleName": "com.akent.SmartWatchDemo",
+    "vendor": "example",
+    "version": {
+      "code": 1,
+      "name": "1.0"
+    },
+    "apiVersion": {
+      "compatible": 3,
+      "target": 4,
+      "releaseType": "Beta1"
+    }
+  },
+  "deviceConfig": {},
+  "module": {
+    "package": "com.example.smartwatchexamplenewide",
+    "name": ".MyApplication",
+    "deviceType": [
+      "wearable"
+    ],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "entry",
+      "moduleType": "entry"
+    },
+    "abilities": [
+      {
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ]
+          }
+        ],
+        "orientation": "landscape",
+        "name": "com.example.smartwatchexamplenewide.MainAbility",
+        "icon": "$media:icon",
+        "description": "$string:mainability_description",
+        "label": "TestApp",
+        "type": "page",
+        "launchType": "standard"
+      }
+    ],
+    "reqPermissions": [
+      {
+        "name": "ohos.permission.INTERNET",
+        "reason": "",
+        "usedScene": {
+          "ability": [
+            "com.example.smartwatchexamplenewide.MainAbility"
+          ],
+          "when": "always"
+        }
+      },
+      {
+        "name": "ohos.permission.GET_NETWORK_INFO",
+        "reason": "",
+        "usedScene": {
+          "ability": [
+            "com.example.smartwatchexamplenewide.MainAbility"
+          ],
+          "when": "always"
+        }
+      },
+      {
+        "name": "ohos.permission.MICROPHONE",
+        "reason": "Record audio sample and translate",
+        "usedScene": {
+          "ability": [
+            "com.example.smartwatchexamplenewide.MainAbility"
+          ],
+          "when": "always"
+        }
+      },
+      {
+        "name": "ohos.permission.WRITE_USER_STORAGE",
+        "reason": "Record audio sample and translate",
+        "usedScene": {
+          "ability": [
+            "com.example.smartwatchexamplenewide.MainAbility"
+          ],
+          "when": "always"
+        }
+      }
+    ]
+  }
+}

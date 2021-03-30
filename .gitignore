@@ -1,0 +1,13 @@
+*.iml
+.gradle
+/local.properties
+/.idea
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+/material
+watchdebug.cer
+watchdemo.p12
+smartdebugDebug.p7b
