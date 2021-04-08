@@ -8,6 +8,6 @@
 .externalNativeBuild
 .cxx
 /material
-watchdebug.cer
-watchdemo.p12
-smartdebugDebug.p7b
+*.cer
+*.p12
+*.p7b

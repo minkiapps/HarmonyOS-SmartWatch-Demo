@@ -78,7 +78,17 @@
             ohos:layout_alignment="horizontal_center"
             ohos:padding="8fp"
             ohos:text="Call Internet API"
-            ohos:bottom_margin="16fp"
+            ohos:top_margin="16fp"/>
+
+        <Button
+            ohos:id="$+id:button_measure_heart_rate"
+            ohos:height="match_content"
+            ohos:width="match_content"
+            ohos:background_element="$graphic:background_ability_main"
+            ohos:layout_alignment="horizontal_center"
+            ohos:padding="8fp"
+            ohos:text="Measure Heart Rate"
+            ohos:bottom_margin="32fp"
             ohos:top_margin="16fp"/>
 
     </DirectionalLayout>

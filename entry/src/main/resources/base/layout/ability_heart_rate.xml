@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent">
+
+    <Text
+        ohos:id="$+id:text_heart_rate_data"
+        ohos:top_margin="64fp"
+        ohos:layout_alignment="center"
+        ohos:hint="Sensor Data [0,0]"
+        ohos:height="match_content"
+        ohos:width="match_content"/>
+
+</DirectionalLayout>

@@ -1,6 +1,7 @@
 package com.example.smartwatchexamplenewide;
 
 import com.example.smartwatchexamplenewide.audio.RecordAudioAbilitySlice;
+import com.example.smartwatchexamplenewide.heartrate.HeartRateAbilitySlice;
 import com.example.smartwatchexamplenewide.joke.JokeAbilitySlice;
 import com.example.smartwatchexamplenewide.util.LogUtils;
 import com.huawei.watch.kit.hiwear.p2p.*;
@@ -80,6 +81,11 @@ public class MainAbilitySlice extends P2PAbilitySlice {
         final Button callRestAPIButton = (Button)findComponentById(ResourceTable.Id_button_get_joke);
         callRestAPIButton.setClickedListener(component -> {
             present(new JokeAbilitySlice(), new Intent());
+        });
+
+        final Button measureHeartRate = (Button) findComponentById(ResourceTable.Id_button_measure_heart_rate);
+        measureHeartRate.setClickedListener(component -> {
+            present(new HeartRateAbilitySlice(), new Intent());
         });
     }
 

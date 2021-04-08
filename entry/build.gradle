@@ -17,9 +17,9 @@ ohos {
             certpath file('../watchdebug.cer')
         }
     }
-    compileSdkVersion 4
+    compileSdkVersion 5
     defaultConfig {
-        compatibleSdkVersion 3
+        compatibleSdkVersion 5
     }
 }
 
@@ -27,7 +27,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar', '*.har'])
     testCompile 'junit:junit:4.12'
 
-    implementation files('libs/wearengine-5.0.0.308.har')
+    implementation files('libs/wearengine-5.0.1.301.har')
 
     implementation "io.reactivex.rxjava2:rxjava:2.2.17"
     implementation 'com.squareup.retrofit2:retrofit:2.6.0'

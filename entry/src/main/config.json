@@ -7,8 +7,8 @@
       "name": "1.0"
     },
     "apiVersion": {
-      "compatible": 3,
-      "target": 4,
+      "compatible": 5,
+      "target": 5,
       "releaseType": "Beta1"
     }
   },
@@ -53,7 +53,7 @@
           "ability": [
             "com.example.smartwatchexamplenewide.MainAbility"
           ],
-          "when": "always"
+          "when": "inuse"
         }
       },
       {
@@ -63,7 +63,7 @@
           "ability": [
             "com.example.smartwatchexamplenewide.MainAbility"
           ],
-          "when": "always"
+          "when": "inuse"
         }
       },
       {
@@ -73,12 +73,22 @@
           "ability": [
             "com.example.smartwatchexamplenewide.MainAbility"
           ],
-          "when": "always"
+          "when": "inuse"
         }
       },
       {
         "name": "ohos.permission.WRITE_USER_STORAGE",
         "reason": "Record audio sample and translate",
+        "usedScene": {
+          "ability": [
+            "com.example.smartwatchexamplenewide.MainAbility"
+          ],
+          "when": "inuse"
+        }
+      },
+      {
+        "name": "ohos.permission.READ_HEALTH_DATA",
+        "reason": "Test measure heart rate",
         "usedScene": {
           "ability": [
             "com.example.smartwatchexamplenewide.MainAbility"
