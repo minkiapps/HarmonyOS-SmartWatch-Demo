@@ -31,7 +31,7 @@ public class AudioRecorder extends Thread {
 
     private static final int BUFFER_SIZE = AudioCapturer.getMinBufferSize(SAMPLING_RATE_IN_HZ,
             CHANNEL_CONFIG,
-            AudioStreamInfo.EncodingFormat.ENCODING_PCM_16BIT.getValue()) * 2;
+            AudioSettings.ENCODING_FORMAT.getValue()) * 2;
 
     private final Context context;
     private final RecorderListener recorderListener;
@@ -45,7 +45,7 @@ public class AudioRecorder extends Thread {
         this.recorderListener = recorderListener;
 
         final AudioStreamInfo audioStreamInfo = new AudioStreamInfo.Builder().encodingFormat(
-                AudioStreamInfo.EncodingFormat.ENCODING_PCM_16BIT)
+                AudioSettings.ENCODING_FORMAT)
                 .channelMask(AudioStreamInfo.ChannelMask.CHANNEL_IN_STEREO)
                 .sampleRate(SAMPLING_RATE_IN_HZ)
                 .build();
@@ -96,6 +96,7 @@ public class AudioRecorder extends Thread {
             }
             outStream.close();
             capture.stop();
+            capture.release();
 
             if(state.get() == RecorderState.STATE_FINISHED_RECORDING) {
                 recorderListener.onRecordingFinished(file);
