@@ -7,7 +7,6 @@
 /captures
 .externalNativeBuild
 .cxx
-/material
 *.cer
 *.p12
 *.p7b

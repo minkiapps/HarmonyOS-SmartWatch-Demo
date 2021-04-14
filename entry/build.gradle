@@ -1,22 +1,18 @@
 apply plugin: 'com.huawei.ohos.hap'
 
 ohos {
-    Properties properties = new Properties()
-    properties.load(project.rootProject.file('local.properties').newDataInputStream())
-    def sPassword = properties.getProperty('storePassword')
-    def kPassword = properties.getProperty('keyPassword')
-
     signingConfigs {
         debug {
             storeFile file('../watchdemo.p12')
-            storePassword sPassword
+            storePassword '000000194D4E513D69412B43014D02FCB96045E3D49C4C6F3CE08F39C3BABD4BD66603F98BE8F60DEE'
             keyAlias 'watchdemo'
-            keyPassword kPassword
+            keyPassword '0000001977985BE022CE211AB6EB383FCC966382BADD14CBFB56988335292A1A4B1ABA6E692E99FF30'
             signAlg 'SHA256withECDSA'
-            profile file('../smartdebugDebug.p7b')
+            profile file('../austria_devicesDebug.p7b')
             certpath file('../watchdebug.cer')
         }
     }
+
     compileSdkVersion 5
     defaultConfig {
         compatibleSdkVersion 5
