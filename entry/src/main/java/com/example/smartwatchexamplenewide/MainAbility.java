@@ -29,6 +29,7 @@ public class MainAbility extends Ability {
     public void onStart(Intent intent) {
         super.onStart(intent);
         super.setMainRoute(MainAbilitySlice.class.getName());
+        setSwipeToDismiss(true);
 
         p2pClient = HiWear.getP2pClient(this);
         p2pClient.setPeerPkgName(peerPkgName);

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:orientation="vertical">
+
+    <TextField
+        ohos:input_enter_key_type="enter_key_type_go"
+        ohos:top_padding="48vp"
+        ohos:bottom_padding="48vp"
+        ohos:scrollable="true"
+        ohos:id="$+id:tf_ability_test_textfield"
+        ohos:height="match_parent"
+        ohos:width="match_parent"
+        ohos:hint="Insert your text here"
+        ohos:multiple_lines="true"
+        ohos:left_padding="24vp"
+        ohos:right_padding="24vp"
+        ohos:text_alignment="center"
+        ohos:text_size="18fp"/>
+
+</DirectionalLayout>

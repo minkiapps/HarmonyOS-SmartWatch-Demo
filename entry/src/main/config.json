@@ -9,12 +9,20 @@
     "apiVersion": {
       "compatible": 5,
       "target": 5,
-      "releaseType": "Beta1"
+      "releaseType": "Release"
     }
   },
   "deviceConfig": {},
   "module": {
     "package": "com.example.smartwatchexamplenewide",
+    "metaData": {
+      "customizeData": [
+        {
+          "name": "hwc-theme",
+          "value": "androidhwext:style/Theme.Emui.Dark.NoActionBar"
+        }
+      ]
+    },
     "name": ".MyApplication",
     "deviceType": [
       "wearable"
@@ -43,6 +51,12 @@
         "label": "TestApp",
         "type": "page",
         "launchType": "standard"
+      },
+      {
+        "icon": "$media:icon",
+        "name": "com.example.smartwatchexamplenewide.heartrate.HeartRateAbility",
+        "description": "",
+        "type": "page"
       }
     ],
     "reqPermissions": [

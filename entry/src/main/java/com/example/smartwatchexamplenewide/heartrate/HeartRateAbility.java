@@ -1,8 +1,8 @@
 package com.example.smartwatchexamplenewide.heartrate;
 
-import com.example.smartwatchexamplenewide.P2PAbilitySlice;
 import com.example.smartwatchexamplenewide.ResourceTable;
 import com.example.smartwatchexamplenewide.util.LogUtils;
+import ohos.aafwk.ability.Ability;
 import ohos.aafwk.content.Intent;
 import ohos.agp.components.Text;
 import ohos.sensor.agent.CategoryBodyAgent;
@@ -13,10 +13,10 @@ import ohos.sensor.listener.ICategoryBodyDataCallback;
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
-public class HeartRateAbilitySlice extends P2PAbilitySlice {
+public class HeartRateAbility extends Ability {
 
     private final static long INTERVAL = TimeUnit.SECONDS.toNanos(1);
-    private final static String TAG = HeartRateAbilitySlice.class.getSimpleName();
+    private final static String TAG = HeartRateAbility.class.getSimpleName();
 
     private final CategoryBodyAgent categoryBodyAgent = new CategoryBodyAgent();
     private CategoryBody categoryBody;
@@ -27,6 +27,8 @@ public class HeartRateAbilitySlice extends P2PAbilitySlice {
     @Override
     protected void onStart(Intent intent) {
         super.onStart(intent);
+
+        setSwipeToDismiss(true);
         setUIContent(ResourceTable.Layout_ability_heart_rate);
 
         heartRateData = (Text)findComponentById(ResourceTable.Id_text_heart_rate_data);

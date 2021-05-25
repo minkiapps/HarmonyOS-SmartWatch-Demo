@@ -1,12 +1,14 @@
 package com.example.smartwatchexamplenewide;
 
 import com.example.smartwatchexamplenewide.audio.RecordAudioAbilitySlice;
-import com.example.smartwatchexamplenewide.heartrate.HeartRateAbilitySlice;
+import com.example.smartwatchexamplenewide.heartrate.HeartRateAbility;
 import com.example.smartwatchexamplenewide.joke.JokeAbilitySlice;
 import com.example.smartwatchexamplenewide.util.LogUtils;
 import com.huawei.watch.kit.hiwear.p2p.*;
 import ohos.aafwk.content.Intent;
+import ohos.aafwk.content.Operation;
 import ohos.agp.components.Button;
+import ohos.agp.components.Component;
 import ohos.agp.components.Image;
 import ohos.agp.components.Text;
 import ohos.app.dispatcher.TaskDispatcher;
@@ -85,7 +87,21 @@ public class MainAbilitySlice extends P2PAbilitySlice {
 
         final Button measureHeartRate = (Button) findComponentById(ResourceTable.Id_button_measure_heart_rate);
         measureHeartRate.setClickedListener(component -> {
-            present(new HeartRateAbilitySlice(), new Intent());
+            final Intent i = new Intent();
+            final Operation operation = new Intent.OperationBuilder()
+                    .withBundleName(getBundleName())
+                    .withAbilityName(HeartRateAbility.class.getName())
+                    .build();
+
+            i.setOperation(operation);
+            startAbility(i);
+        });
+
+        findComponentById(ResourceTable.Id_button_test_text_field).setClickedListener(new Component.ClickedListener() {
+            @Override
+            public void onClick(final Component component) {
+                present(new TestTextFieldAbility(), new Intent());
+            }
         });
     }
 
