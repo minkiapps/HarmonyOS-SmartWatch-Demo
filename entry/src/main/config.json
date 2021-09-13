@@ -23,7 +23,7 @@
         }
       ]
     },
-    "name": "com.minkiapps.hostest.MyApplication",
+    "name": "com.minkiapps.hos.test.MyApplication",
     "deviceType": [
       "wearable",
       "phone"
@@ -46,7 +46,7 @@
             ]
           }
         ],
-        "name": "com.minkiapps.hostest.MainAbility",
+        "name": "com.minkiapps.hos.test.HiWearMainAbility",
         "icon": "$media:icon",
         "description": "$string:mainability_description",
         "type": "page",
@@ -54,7 +54,7 @@
       },
       {
         "icon": "$media:icon",
-        "name": "com.minkiapps.hostest.sensor.SensorAbility",
+        "name": "com.minkiapps.hos.test.sensor.SensorAbility",
         "description": "",
         "type": "page"
       }
@@ -65,7 +65,7 @@
         "reason": "",
         "usedScene": {
           "ability": [
-            "com.minkiapps.hostest.MainAbility"
+            "com.minkiapps.hos.test.HiWearMainAbility"
           ],
           "when": "inuse"
         }
@@ -75,7 +75,7 @@
         "reason": "",
         "usedScene": {
           "ability": [
-            "com.minkiapps.hostest.MainAbility"
+            "com.minkiapps.hos.test.HiWearMainAbility"
           ],
           "when": "inuse"
         }
@@ -85,7 +85,7 @@
         "reason": "",
         "usedScene": {
           "ability": [
-            "com.minkiapps.hostest.MainAbility"
+            "com.minkiapps.hos.test.HiWearMainAbility"
           ],
           "when": "inuse"
         }
@@ -95,7 +95,7 @@
         "reason": "Record audio sample and translate",
         "usedScene": {
           "ability": [
-            "com.minkiapps.hostest.MainAbility"
+            "com.minkiapps.hos.test.HiWearMainAbility"
           ],
           "when": "inuse"
         }
@@ -105,7 +105,7 @@
         "reason": "Record audio sample and translate",
         "usedScene": {
           "ability": [
-            "com.minkiapps.hostest.MainAbility"
+            "com.minkiapps.hos.test.HiWearMainAbility"
           ],
           "when": "inuse"
         }
@@ -115,7 +115,7 @@
         "reason": "Test measure heart rate",
         "usedScene": {
           "ability": [
-            "com.minkiapps.hostest.MainAbility"
+            "com.minkiapps.hos.test.HiWearMainAbility"
           ],
           "when": "always"
         }
