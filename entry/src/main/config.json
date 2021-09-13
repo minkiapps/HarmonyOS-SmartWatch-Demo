@@ -1,6 +1,6 @@
 {
   "app": {
-    "bundleName": "com.akent.SmartWatchDemo",
+    "bundleName": "com.minkiapps.hos.test",
     "vendor": "example",
     "version": {
       "code": 1,
@@ -14,7 +14,7 @@
   },
   "deviceConfig": {},
   "module": {
-    "package": "com.example.smartwatchexamplenewide",
+    "package": "com.minkiapps.hostest",
     "metaData": {
       "customizeData": [
         {
@@ -23,11 +23,13 @@
         }
       ]
     },
-    "name": ".MyApplication",
+    "name": "com.minkiapps.hostest.MyApplication",
     "deviceType": [
-      "wearable"
+      "wearable",
+      "phone"
     ],
     "distro": {
+      "installationFree" : false,
       "deliveryWithInstall": true,
       "moduleName": "entry",
       "moduleType": "entry"
@@ -44,17 +46,15 @@
             ]
           }
         ],
-        "orientation": "landscape",
-        "name": "com.example.smartwatchexamplenewide.MainAbility",
+        "name": "com.minkiapps.hostest.MainAbility",
         "icon": "$media:icon",
         "description": "$string:mainability_description",
-        "label": "TestApp",
         "type": "page",
         "launchType": "standard"
       },
       {
         "icon": "$media:icon",
-        "name": "com.example.smartwatchexamplenewide.heartrate.HeartRateAbility",
+        "name": "com.minkiapps.hostest.sensor.SensorAbility",
         "description": "",
         "type": "page"
       }
@@ -65,7 +65,7 @@
         "reason": "",
         "usedScene": {
           "ability": [
-            "com.example.smartwatchexamplenewide.MainAbility"
+            "com.minkiapps.hostest.MainAbility"
           ],
           "when": "inuse"
         }
@@ -75,7 +75,17 @@
         "reason": "",
         "usedScene": {
           "ability": [
-            "com.example.smartwatchexamplenewide.MainAbility"
+            "com.minkiapps.hostest.MainAbility"
+          ],
+          "when": "inuse"
+        }
+      },
+      {
+        "name": "ohos.permission.GET_WIFI_INFO",
+        "reason": "",
+        "usedScene": {
+          "ability": [
+            "com.minkiapps.hostest.MainAbility"
           ],
           "when": "inuse"
         }
@@ -85,7 +95,7 @@
         "reason": "Record audio sample and translate",
         "usedScene": {
           "ability": [
-            "com.example.smartwatchexamplenewide.MainAbility"
+            "com.minkiapps.hostest.MainAbility"
           ],
           "when": "inuse"
         }
@@ -95,7 +105,7 @@
         "reason": "Record audio sample and translate",
         "usedScene": {
           "ability": [
-            "com.example.smartwatchexamplenewide.MainAbility"
+            "com.minkiapps.hostest.MainAbility"
           ],
           "when": "inuse"
         }
@@ -105,7 +115,7 @@
         "reason": "Test measure heart rate",
         "usedScene": {
           "ability": [
-            "com.example.smartwatchexamplenewide.MainAbility"
+            "com.minkiapps.hostest.MainAbility"
           ],
           "when": "always"
         }

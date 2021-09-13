@@ -10,3 +10,4 @@
 *.cer
 *.p12
 *.p7b
+/signing

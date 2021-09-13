@@ -87,7 +87,7 @@
             ohos:background_element="$graphic:background_ability_main"
             ohos:layout_alignment="horizontal_center"
             ohos:padding="8fp"
-            ohos:text="Measure Heart Rate"
+            ohos:text="Sensors"
             ohos:top_margin="16fp"/>
 
         <Button
@@ -98,6 +98,26 @@
             ohos:layout_alignment="horizontal_center"
             ohos:padding="8fp"
             ohos:text="Test TextField"
+            ohos:top_margin="16fp"/>
+
+        <Button
+            ohos:id="$+id:button_vaccine_qrcode"
+            ohos:height="match_content"
+            ohos:width="match_content"
+            ohos:background_element="$graphic:background_ability_main"
+            ohos:layout_alignment="horizontal_center"
+            ohos:padding="8fp"
+            ohos:text="Vaccine Qrcode"
+            ohos:top_margin="16fp"/>
+
+        <Button
+            ohos:id="$+id:button_play_mp3"
+            ohos:height="match_content"
+            ohos:width="match_content"
+            ohos:background_element="$graphic:background_ability_main"
+            ohos:layout_alignment="horizontal_center"
+            ohos:padding="8fp"
+            ohos:text="Play Mp3"
             ohos:bottom_margin="32fp"
             ohos:top_margin="16fp"/>
 

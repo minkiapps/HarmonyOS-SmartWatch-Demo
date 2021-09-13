@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:orientation="vertical">
+
+    <!-- add your qr code here -->
+    <Image
+        ohos:scale_mode="stretch"
+        ohos:margin="36vp"
+        ohos:height="match_parent"
+        ohos:width="match_parent"/>
+
+</DirectionalLayout>

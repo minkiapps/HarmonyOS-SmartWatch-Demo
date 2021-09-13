@@ -3,13 +3,13 @@ apply plugin: 'com.huawei.ohos.hap'
 ohos {
     signingConfigs {
         debug {
-            storeFile file('../watchdemo.p12')
-            storePassword '000000194D4E513D69412B43014D02FCB96045E3D49C4C6F3CE08F39C3BABD4BD66603F98BE8F60DEE'
-            keyAlias 'watchdemo'
-            keyPassword '0000001977985BE022CE211AB6EB383FCC966382BADD14CBFB56988335292A1A4B1ABA6E692E99FF30'
+            storeFile file('../signing/minkiapps.p12')
+            storePassword '000000183D3F4327DC63BFF050F2036B7D54726447E800A91B2F1A5F6964E5FBE7E009B84D6A1DF1'
+            keyAlias 'minkiapps'
+            keyPassword '00000018E0607150F21F0E9E5BBF84739374B83563AE6B5DBBD72F570683352B92FA489FBAB621AE'
             signAlg 'SHA256withECDSA'
-            profile file('../austria_devicesDebug.p7b')
-            certpath file('../watchdebug.cer')
+            profile file('../signing/allDebug.p7b')
+            certpath file('../signing/minkiapps.cer')
         }
     }
 
@@ -23,7 +23,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar', '*.har'])
     testCompile 'junit:junit:4.12'
 
-    implementation files('libs/wearengine-5.0.1.301.har')
+    implementation 'com.huawei.hms:wearengine-wearable-harmonyos:5.0.2.302'
 
     implementation "io.reactivex.rxjava2:rxjava:2.2.17"
     implementation 'com.squareup.retrofit2:retrofit:2.6.0'

@@ -1,4 +1,4 @@
-package com.example.smartwatchexamplenewide;
+package com.minkiapps.hostest;
 
 import org.junit.Test;
 
