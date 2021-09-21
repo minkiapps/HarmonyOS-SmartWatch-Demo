@@ -2,7 +2,6 @@ package com.minkiapps.hos.test.joke;
 
 import com.minkiapps.hostest.ResourceTable;
 import com.minkiapps.hos.test.P2PAbilitySlice;
-import com.minkiapps.hos.test.net.model.Joke;
 import com.minkiapps.hos.test.util.LogUtils;
 import com.minkiapps.hos.test.util.OfflineUtil;
 import com.minkiapps.hos.test.util.UiObserver;
@@ -11,8 +10,6 @@ import ohos.agp.components.Button;
 import ohos.agp.components.Component;
 import ohos.agp.components.RoundProgressBar;
 import ohos.agp.components.Text;
-
-import java.util.List;
 
 public class JokeAbilitySlice extends P2PAbilitySlice {
 
@@ -66,14 +63,8 @@ public class JokeAbilitySlice extends P2PAbilitySlice {
         jokeTextView.setVisibility(Component.VISIBLE);
         getJokeButton.setEnabled(true);
 
-        final List<Joke> jokes = loadedState.getJokes();
-        if(jokes.size() > 0) {
-            final Joke joke = jokes.get(0);
-            jokeTextView.setText(joke.getSetup() + " " + joke.getPunchline());
-            jokeTextView.startAutoScrolling();
-        } else {
-            jokeTextView.setText("No Jokes available...");
-        }
+        jokeTextView.setText(loadedState.getJoke().getValue());
+        jokeTextView.startAutoScrolling();
     }
 
     private void onError(final JokeViewState.ErrorState errorState) {
