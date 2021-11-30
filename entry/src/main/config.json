@@ -5,11 +5,6 @@
     "version": {
       "code": 1,
       "name": "1.0"
-    },
-    "apiVersion": {
-      "compatible": 5,
-      "target": 5,
-      "releaseType": "Release"
     }
   },
   "deviceConfig": {},
@@ -29,7 +24,7 @@
       "phone"
     ],
     "distro": {
-      "installationFree" : false,
+      "installationFree": false,
       "deliveryWithInstall": true,
       "moduleName": "entry",
       "moduleType": "entry"
@@ -57,6 +52,15 @@
         "name": "com.minkiapps.hos.test.sensor.SensorAbility",
         "description": "",
         "type": "page"
+      },
+      {
+        "icon": "$media:icon",
+        "name": "com.minkiapps.hos.test.TimerAbility",
+        "description": "",
+        "type": "service",
+        "backgroundModes": [
+          "dataTransfer"
+        ]
       }
     ],
     "reqPermissions": [
@@ -116,6 +120,16 @@
         "usedScene": {
           "ability": [
             "com.minkiapps.hos.test.HiWearMainAbility"
+          ],
+          "when": "always"
+        }
+      },
+      {
+        "name": "ohos.permission.KEEP_BACKGROUND_RUNNING",
+        "reason": "keep service ability background running",
+        "usedScene": {
+          "ability": [
+            "com.minkiapps.hos.test.TimerAbility"
           ],
           "when": "always"
         }

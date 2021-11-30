@@ -13,7 +13,7 @@ ohos {
         }
     }
 
-    compileSdkVersion 5
+    compileSdkVersion 7
     defaultConfig {
         compatibleSdkVersion 5
     }

@@ -8,9 +8,7 @@ import com.minkiapps.hos.test.util.LogUtils;
 import com.huawei.watch.kit.hiwear.p2p.*;
 import ohos.aafwk.content.Intent;
 import ohos.aafwk.content.Operation;
-import ohos.agp.components.Button;
-import ohos.agp.components.Image;
-import ohos.agp.components.Text;
+import ohos.agp.components.*;
 import ohos.app.dispatcher.TaskDispatcher;
 import ohos.global.resource.RawFileDescriptor;
 import ohos.media.common.Source;
@@ -20,6 +18,8 @@ import ohos.media.player.Player;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainAbilitySlice extends P2PAbilitySlice {
 
@@ -118,6 +118,79 @@ public class MainAbilitySlice extends P2PAbilitySlice {
                 LogUtils.e(TAG, "Failed to get mp3 fileDescriptor: " + e.getMessage());
             }
         });
+
+        ((Switch)findComponentById(ResourceTable.Id_sw_notification)).setCheckedStateChangedListener((absButton, checked) -> {
+            final Intent intentService = new Intent();
+            final Operation operation = new Intent.OperationBuilder()
+                    .withDeviceId("")
+                    .withBundleName(getBundleName())
+                    .withAbilityName(TimerAbility.class.getName())
+                    .build();
+            intentService.setOperation(operation);
+            if(checked) {
+                startAbility(intentService);
+            } else {
+                stopAbility(intentService);
+            }
+        });
+
+        findComponentById(ResourceTable.Id_button_play_hls).setClickedListener(component -> {
+            playHLS();
+        });
+    }
+
+    private void playHLS() {
+        final Player player = new Player(getContext());
+        final Map<String, String> extraHeaders = new HashMap<String, String>();
+        player.setSource(new Source("", extraHeaders)); //add hls url here
+        player.setPlayerCallback(new Player.IPlayerCallback() {
+            @Override
+            public void onPrepared() {
+
+            }
+
+            @Override
+            public void onMessage(int type, int extra) {
+                LogUtils.d(TAG, String.format("On player message, type: %d extra: %d", type, extra));
+            }
+
+            @Override
+            public void onError(int errorType, int errorCode) {
+                LogUtils.e(TAG, String.format("On player error, type: %d errorCode: %d", errorType, errorCode));
+            }
+
+            @Override
+            public void onResolutionChanged(int width, int height) {
+
+            }
+
+            @Override
+            public void onPlayBackComplete() {
+
+            }
+
+            @Override
+            public void onRewindToComplete() {
+
+            }
+
+            @Override
+            public void onBufferingChange(int percent) {
+
+            }
+
+            @Override
+            public void onNewTimedMetaData(Player.MediaTimedMetaData mediaTimedMetaData) {
+
+            }
+
+            @Override
+            public void onMediaTimeIncontinuity(Player.MediaTimeInfo mediaTimeInfo) {
+
+            }
+        });
+        player.prepare();
+        player.play();
     }
 
     private void sendMessageToMobile(String msg) {
