@@ -1,4 +1,5 @@
 apply plugin: 'com.huawei.ohos.hap'
+apply plugin: 'com.huawei.agconnect'
 
 ohos {
     signingConfigs {
@@ -15,13 +16,16 @@ ohos {
 
     compileSdkVersion 7
     defaultConfig {
-        compatibleSdkVersion 5
+        compatibleSdkVersion 6
     }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar', '*.har'])
     testCompile 'junit:junit:4.12'
+
+    implementation 'com.huawei.agconnect:agconnect-core-harmony:1.2.1.300'
+    implementation 'com.huawei.agconnect:agconnect-crash-harmony:1.2.1.300'
 
     implementation 'com.huawei.hms:wearengine-wearable-harmonyos:5.0.2.302'
 

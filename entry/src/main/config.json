@@ -31,6 +31,14 @@
     },
     "abilities": [
       {
+        "permissions": [
+          "com.huawei.agconnect.core.DataAbilityShellProvider.PROVIDER"
+        ],
+        "name": "com.huawei.agconnect.core.provider.AGConnectInitializeAbility",
+        "type": "data",
+        "uri": "dataability://com.minkiapps.hos.test.AGConnectInitializeAbility"
+      },
+      {
         "skills": [
           {
             "entities": [

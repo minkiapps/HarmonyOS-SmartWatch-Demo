@@ -1,5 +1,8 @@
 package com.minkiapps.hos.test;
 
+import com.huawei.agconnect.AGConnectInstance;
+import com.huawei.agconnect.crash.AGConnectCrash;
+import com.huawei.agconnect.crash.BuildConfig;
 import com.minkiapps.hos.test.net.ApiService;
 import com.minkiapps.hos.test.util.LogUtils;
 import ohos.aafwk.ability.AbilityPackage;
@@ -24,6 +27,11 @@ public class MyApplication extends AbilityPackage {
     @Override
     public void onInitialize() {
         super.onInitialize();
+
+        AGConnectInstance.initialize(this);
+
+        final boolean enableCrash = true; //add logic to enable or not, e.g: !BuildConfig.DEBUG
+        AGConnectCrash.getInstance().enableCrashCollection(enableCrash);
 
         LogUtils.d(TAG, "Init SmartWatch Example App");
         final NotificationSlot slot = new NotificationSlot(ONGOING_CARD_SLOT_ID, ONGOING_NOTIFICATION_LABEL, NotificationSlot.LEVEL_MIN);
